@@ -6,6 +6,7 @@ target 'BitbucketRepo' do
   use_frameworks!
 
   pod 'SwiftyJSON'
+  pod 'Kingfisher'
 
   target 'BitbucketRepoTests' do
     inherit! :search_paths
