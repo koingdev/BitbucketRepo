@@ -11,20 +11,53 @@ import UIKit
 class BitbucketViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
+    private lazy var nextPageButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Next Page", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .orange
+        button.isHidden = true
+        return button
+    }()
+    
     private let viewModel = BitbucketViewModel()
     private var dataSource: [Bitbucket] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        setUpTableView()
         
         Queue.background {
             self.viewModel.fetch { [weak s = self] dataSource in
-                s?.dataSource = dataSource
                 Queue.main {
+                    s?.dataSource = dataSource
                     s?.tableView.reloadData()
+                    s?.nextPageButton.isHidden = false
+                }
+            }
+        }
+    }
+    
+    private func setUpTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        // Footer
+        let footer = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44))
+        nextPageButton.frame = footer.frame
+        nextPageButton.addTarget(self, action: #selector(nextPagePressed), for: .touchUpInside)
+        footer.addSubview(nextPageButton)
+        tableView.tableFooterView = footer
+    }
+    
+    @objc func nextPagePressed() {
+        Queue.background {
+            self.viewModel.fetchMore { [weak self] nextPageDataSource in
+                guard let s = self else { return }
+                Queue.main {
+                    s.dataSource.append(contentsOf: nextPageDataSource)
+                    s.tableView.reloadData()
+                    s.nextPageButton.isHidden = !s.viewModel.hasNextPage
                 }
             }
         }

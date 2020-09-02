@@ -11,6 +11,10 @@ import Foundation
 class BitbucketViewModel {
     
     let repository: BitbucketRepositoryType
+    var hasNextPage: Bool {
+        guard let nextPageURL = repository.nextPageURL, !nextPageURL.isEmpty else { return false }
+        return true
+    }
     
     init(repository: BitbucketRepositoryType = BitbucketRepository()) {
         self.repository = repository
