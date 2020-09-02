@@ -14,30 +14,22 @@ class BitbucketTests: XCTestCase {
     
     func testParseValidJSON() {
         // Given
-        let mock = """
-        {
-          "created_on": "2020/09/02",
-          "owner": {
-            "display_name": "test_name",
-            "links": {
-              "avatar": {
-                "href": "test_url"
-              }
-            },
-            "type": "user"
-          }
+        guard let path = Bundle.main.path(forResource: "Mock", ofType: "json"), let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            XCTFail("Could not find Mock json file!")
+            return
         }
-        """
         
         // When
-        let json = JSON(parseJSON: mock)
+        let json = JSON(data)
         let bitbucket = Bitbucket.parse(json: json)
         
         // Then
-        XCTAssertEqual(bitbucket.displayName, "test_name", "Display name should be test_name!")
-        XCTAssertEqual(bitbucket.type, "user", "Type should be user!")
-        XCTAssertEqual(bitbucket.avatarURL, "test_url", "Avatar url should be test_url!")
-        XCTAssertEqual(bitbucket.createdDate, "2020/09/02", "Create date should be 2020/09/02!")
+        XCTAssertEqual(bitbucket.name, "Design Pattern", "Name should be Design Pattern!")
+        XCTAssertEqual(bitbucket.language, "Swift", "Language should be Swift!")
+        XCTAssertEqual(bitbucket.ownerDisplayName, "KoingDev", "Display name should be KoingDev!")
+        XCTAssertEqual(bitbucket.ownerType, "user", "Type should be user!")
+        XCTAssertEqual(bitbucket.ownerAvatarURL, "test_avatar_url", "Avatar url should be test_avatar_url!")
+        XCTAssertEqual(bitbucket.createdDate, "2020-09-02", "Create date should be 2020-09-02!")
     }
 
     func testParseEmptyJSON() {
@@ -53,9 +45,9 @@ class BitbucketTests: XCTestCase {
         let bitbucket = Bitbucket.parse(json: json)
         
         // Then
-        XCTAssertTrue(bitbucket.displayName.isEmpty, "Display name should be empty!")
+        XCTAssertTrue(bitbucket.ownerDisplayName.isEmpty, "Display name should be empty!")
         XCTAssertTrue(bitbucket.type.isEmpty, "Type should be empty!")
-        XCTAssertTrue(bitbucket.avatarURL.isEmpty, "Avatar url should be empty!")
+        XCTAssertTrue(bitbucket.ownerAvatarURL.isEmpty, "Avatar url should be empty!")
         XCTAssertTrue(bitbucket.createdDate.isEmpty, "Create date should be empty!")
     }
 
