@@ -20,6 +20,10 @@
 		A2177B7E24FF480D000A3B30 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2177B7D24FF480D000A3B30 /* ApiClient.swift */; };
 		A2177B8124FF629A000A3B30 /* BitbucketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2177B8024FF629A000A3B30 /* BitbucketViewModel.swift */; };
 		A2177B8324FF6592000A3B30 /* BitbucketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2177B8224FF6592000A3B30 /* BitbucketTableViewCell.swift */; };
+		A2177B8524FF7E11000A3B30 /* BitbucketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2177B8424FF7E11000A3B30 /* BitbucketDetailViewController.swift */; };
+		A2177B8724FF8B6F000A3B30 /* BitbucketWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2177B8624FF8B6F000A3B30 /* BitbucketWebViewController.swift */; };
+		A2177B8924FF8F87000A3B30 /* Mock.json in Resources */ = {isa = PBXBuildFile; fileRef = A2177B8824FF8F87000A3B30 /* Mock.json */; };
+		A2177B8A24FF927F000A3B30 /* Mock.json in Resources */ = {isa = PBXBuildFile; fileRef = A2177B8824FF8F87000A3B30 /* Mock.json */; };
 		F9A1480C066167FC26EFFB8C /* Pods_BitbucketRepo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58421F9CD3C401A2DFCF9DD2 /* Pods_BitbucketRepo.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +56,9 @@
 		A2177B7D24FF480D000A3B30 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		A2177B8024FF629A000A3B30 /* BitbucketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitbucketViewModel.swift; sourceTree = "<group>"; };
 		A2177B8224FF6592000A3B30 /* BitbucketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitbucketTableViewCell.swift; sourceTree = "<group>"; };
+		A2177B8424FF7E11000A3B30 /* BitbucketDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitbucketDetailViewController.swift; sourceTree = "<group>"; };
+		A2177B8624FF8B6F000A3B30 /* BitbucketWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitbucketWebViewController.swift; sourceTree = "<group>"; };
+		A2177B8824FF8F87000A3B30 /* Mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Mock.json; sourceTree = "<group>"; };
 		AC37F5F5C27E3B4C68A30394 /* Pods-BitbucketRepoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitbucketRepoTests.release.xcconfig"; path = "Target Support Files/Pods-BitbucketRepoTests/Pods-BitbucketRepoTests.release.xcconfig"; sourceTree = "<group>"; };
 		AC834E152CB9E01D67367714 /* Pods-BitbucketRepo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitbucketRepo.release.xcconfig"; path = "Target Support Files/Pods-BitbucketRepo/Pods-BitbucketRepo.release.xcconfig"; sourceTree = "<group>"; };
 		EF084DFDFB26CDB1ECB85D5D /* Pods-BitbucketRepoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitbucketRepoTests.debug.xcconfig"; path = "Target Support Files/Pods-BitbucketRepoTests/Pods-BitbucketRepoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +144,7 @@
 		A2177B6724FF4011000A3B30 /* BitbucketRepoTests */ = {
 			isa = PBXGroup;
 			children = (
+				A2177B8824FF8F87000A3B30 /* Mock.json */,
 				A2177B6824FF4011000A3B30 /* BitbucketTests.swift */,
 				A2177B6A24FF4011000A3B30 /* Info.plist */,
 			);
@@ -164,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				A2177B5524FF400E000A3B30 /* BitbucketViewController.swift */,
+				A2177B8424FF7E11000A3B30 /* BitbucketDetailViewController.swift */,
+				A2177B8624FF8B6F000A3B30 /* BitbucketWebViewController.swift */,
 				A2177B8224FF6592000A3B30 /* BitbucketTableViewCell.swift */,
 				A2177B5724FF400E000A3B30 /* Main.storyboard */,
 			);
@@ -270,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2177B8A24FF927F000A3B30 /* Mock.json in Resources */,
 				A2177B5E24FF4011000A3B30 /* LaunchScreen.storyboard in Resources */,
 				A2177B5B24FF4011000A3B30 /* Assets.xcassets in Resources */,
 				A2177B5924FF400E000A3B30 /* Main.storyboard in Resources */,
@@ -280,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2177B8924FF8F87000A3B30 /* Mock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,10 +367,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2177B7C24FF4775000A3B30 /* Queue.swift in Sources */,
+				A2177B8524FF7E11000A3B30 /* BitbucketDetailViewController.swift in Sources */,
 				A2177B7824FF4682000A3B30 /* Bitbucket.swift in Sources */,
 				A2177B8124FF629A000A3B30 /* BitbucketViewModel.swift in Sources */,
 				A2177B7A24FF473C000A3B30 /* BitbucketRepository.swift in Sources */,
 				A2177B5624FF400E000A3B30 /* BitbucketViewController.swift in Sources */,
+				A2177B8724FF8B6F000A3B30 /* BitbucketWebViewController.swift in Sources */,
 				A2177B5224FF400E000A3B30 /* AppDelegate.swift in Sources */,
 				A2177B7E24FF480D000A3B30 /* ApiClient.swift in Sources */,
 				A2177B8324FF6592000A3B30 /* BitbucketTableViewCell.swift in Sources */,

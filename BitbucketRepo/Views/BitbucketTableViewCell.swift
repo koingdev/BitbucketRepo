@@ -17,10 +17,10 @@ class BitbucketTableViewCell: UITableViewCell {
     @IBOutlet private weak var createDateLabel: UILabel!
     
     func configure(bitbucket: Bitbucket) {
-        displayNameLabel.text = bitbucket.displayName
-        typeLabel.text = "Type: \(bitbucket.type)"
+        displayNameLabel.text = bitbucket.ownerDisplayName
+        typeLabel.text = "Type: \(bitbucket.ownerType)"
         createDateLabel.text = "Created: \(formattedDate(bitbucket.createdDate))"
-        avatarImageView.kf.setImage(with: URL(string: bitbucket.avatarURL))
+        avatarImageView.kf.setImage(with: URL(string: bitbucket.ownerAvatarURL))
     }
     
     private func formattedDate(_ date: String) -> String {
