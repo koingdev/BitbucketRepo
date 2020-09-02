@@ -24,7 +24,7 @@ class BitbucketRepository: BitbucketRepositoryType {
         self.apiClient = apiClient
     }
 
-    func fetch(_ url: String = "https://api.bitbucket.org/2.0/repositories", completion: @escaping (Result<[Bitbucket], Error>) -> Void) {
+    func fetch(_ url: String, completion: @escaping (Result<[Bitbucket], Error>) -> Void) {
         apiClient.get(url: url) { [weak self] result in
             guard let s = self else { return }
             
