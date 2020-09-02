@@ -18,9 +18,18 @@ class BitbucketTableViewCell: UITableViewCell {
     
     func configure(bitbucket: Bitbucket) {
         displayNameLabel.text = bitbucket.displayName
-        typeLabel.text = bitbucket.type
-        createDateLabel.text = bitbucket.createdDate
+        typeLabel.text = "Type: \(bitbucket.type)"
+        createDateLabel.text = "Created: \(formattedDate(bitbucket.createdDate))"
         avatarImageView.kf.setImage(with: URL(string: bitbucket.avatarURL))
+    }
+    
+    private func formattedDate(_ date: String) -> String {
+        let df = DateFormatter()
+        df.calendar = Calendar(identifier: .gregorian)
+        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        guard let date = df.date(from: date) else { return "" }
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return df.string(from: date)
     }
     
 }
