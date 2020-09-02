@@ -13,7 +13,7 @@
 		A2177B5924FF400E000A3B30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2177B5724FF400E000A3B30 /* Main.storyboard */; };
 		A2177B5B24FF4011000A3B30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2177B5A24FF4011000A3B30 /* Assets.xcassets */; };
 		A2177B5E24FF4011000A3B30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2177B5C24FF4011000A3B30 /* LaunchScreen.storyboard */; };
-		A2177B6924FF4011000A3B30 /* BitbucketRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2177B6824FF4011000A3B30 /* BitbucketRepoTests.swift */; };
+		A2177B6924FF4011000A3B30 /* BitbucketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2177B6824FF4011000A3B30 /* BitbucketTests.swift */; };
 		A2177B7824FF4682000A3B30 /* Bitbucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2177B7724FF4682000A3B30 /* Bitbucket.swift */; };
 		A2177B7A24FF473C000A3B30 /* BitbucketRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2177B7924FF473C000A3B30 /* BitbucketRepository.swift */; };
 		A2177B7C24FF4775000A3B30 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2177B7B24FF4775000A3B30 /* Queue.swift */; };
@@ -44,7 +44,7 @@
 		A2177B5D24FF4011000A3B30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2177B5F24FF4011000A3B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2177B6424FF4011000A3B30 /* BitbucketRepoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitbucketRepoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2177B6824FF4011000A3B30 /* BitbucketRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitbucketRepoTests.swift; sourceTree = "<group>"; };
+		A2177B6824FF4011000A3B30 /* BitbucketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitbucketTests.swift; sourceTree = "<group>"; };
 		A2177B6A24FF4011000A3B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2177B7724FF4682000A3B30 /* Bitbucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitbucket.swift; sourceTree = "<group>"; };
 		A2177B7924FF473C000A3B30 /* BitbucketRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitbucketRepository.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		A2177B6724FF4011000A3B30 /* BitbucketRepoTests */ = {
 			isa = PBXGroup;
 			children = (
-				A2177B6824FF4011000A3B30 /* BitbucketRepoTests.swift */,
+				A2177B6824FF4011000A3B30 /* BitbucketTests.swift */,
 				A2177B6A24FF4011000A3B30 /* Info.plist */,
 			);
 			path = BitbucketRepoTests;
@@ -369,7 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2177B6924FF4011000A3B30 /* BitbucketRepoTests.swift in Sources */,
+				A2177B6924FF4011000A3B30 /* BitbucketTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
